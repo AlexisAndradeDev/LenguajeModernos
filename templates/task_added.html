@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tarea creada</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        color: #555;
+        text-align: center;
+      }
+      a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        background: #5cb85c;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        width: 200px;
+      }
+      a:hover {
+        background: #4cae4c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tarea creada correctamente</h1>
+    <p><b>Tarea:</b> {{ task }}</p>
+    <p><b>Descripción:</b> {{ description }}</p>
+    <a href="{{ url_for('index') }}">Crear otra tarea</a>
+  </body>
+</html>
