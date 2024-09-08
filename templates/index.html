@@ -1,62 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir Tarea</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            margin-top: 10px;
-            display: block;
-            color: #555;
-        }
-        input[type="text"],
-        textarea {
-            width: 95%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            background: #5cb85c;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        input[type="submit"]:hover {
-            background: #4cae4c;
-        }
-    </style>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h2>Añadir Tarea</h2>
-    <form action="{{ url_for('add_task') }}" method="post">
-        <label for="task">Tarea:</label><br>
-        <input type="text" id="task" name="task"><br>
-        <label for="description">Descripción:</label><br>
-        <textarea id="description" name="description"></textarea><br>
-        <input type="submit" value="Enviar">
-    </form>
+    <h1>Agenda de tareas</h1>
+    <a href="{{ url_for('get_tasks') }}">Ver tareas</a>
+
+    <div>
+        <form action="{{ url_for('add_task') }}" method="post">
+            <label for="task">Tarea:</label>
+            <input type="text" id="task" name="task" required>
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+            <button type="submit">Crear</button>
+        </form>
+    </div>
 </body>
+
 </html>

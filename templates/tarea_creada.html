@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tarea Creada</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <p><b>Tarea:</b> {{ task }}</p>
+  <p><b>Descripción:</b> {{ description }}</p>
+  <a href="{{ url_for('get_tasks') }}">Ver tareas</a>
+  <a href="{{ url_for('index') }}">Volver al inicio</a>
+</body>
+
+</html>
